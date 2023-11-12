@@ -15,18 +15,18 @@ public class Client {
     private String name;
     private String cpf;
     private double income;
-    private LocalDate birdDate;
+    private LocalDate birthDate;
     private int children;
 
     public Client() {
     }
 
-    public Client(long id, String name, String cpf, double income, LocalDate birdDate, int children) {
+    public Client(long id, String name, String cpf, double income, LocalDate birthDate, int children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.income = income;
-        this.birdDate = birdDate;
+        this.birthDate = birthDate;
         this.children = children;
     }
 
@@ -62,12 +62,12 @@ public class Client {
         this.income = income;
     }
 
-    public LocalDate getBirdDate() {
-        return birdDate;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirdDate(LocalDate birdDate) {
-        this.birdDate = birdDate;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public int getChildren() {

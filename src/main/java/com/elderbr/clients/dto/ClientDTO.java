@@ -23,9 +23,8 @@ public class ClientDTO {
     @Positive(message = "O valor não pode ser negativo")
     private double income;
 
-    @NotBlank(message = "Campo requerido")
     @Past(message = "A data do aniversário não pode ser atual ou futura")
-    private LocalDate birdDate;
+    private LocalDate birthDate;
 
     @Positive(message = "O valor não pode ser negativo")
     private int children;
@@ -33,12 +32,12 @@ public class ClientDTO {
     private ClientDTO() {
     }
 
-    public ClientDTO(long id, String name, String cpf, double income, LocalDate birdDate, int children) {
+    public ClientDTO(long id, String name, String cpf, double income, LocalDate birthDate, int children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.income = income;
-        this.birdDate = birdDate;
+        this.birthDate = birthDate;
         this.children = children;
     }
 
@@ -47,7 +46,7 @@ public class ClientDTO {
         name = client.getName();
         cpf = client.getCpf();
         income = client.getIncome();
-        birdDate = client.getBirdDate();
+        birthDate = client.getBirthDate();
         children = client.getChildren();
     }
 
@@ -67,8 +66,8 @@ public class ClientDTO {
         return income;
     }
 
-    public LocalDate getBirdDate() {
-        return birdDate;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
     public int getChildren() {
