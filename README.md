@@ -1,5 +1,8 @@
-[![DevSuperior](https://devsuperior.com.br/_next/static/images/logo-062c6633a2eb15831642636f96aa2c6c.svg)
-](https://devsuperior.com.br/)
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 500 200" width="300" height="100" style="background-color: black; padding:20px" >
+	<image href="https://devsuperior.com.br/_next/static/images/logo-062c6633a2eb15831642636f96aa2c6c.svg" width="100%" height="100%"/>
+</svg>
+
+
 ## DESAFIO: CRUD de clientes
 
 ### Capítulo: API REST, camadas, CRUD, exceções, validações
