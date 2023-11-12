@@ -3,6 +3,7 @@ package com.elderbr.clients.services;
 import com.elderbr.clients.dto.ClientDTO;
 import com.elderbr.clients.entities.Client;
 import com.elderbr.clients.repositories.ClientRepository;
+import com.elderbr.clients.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +19,8 @@ public class ClientService {
 
     @Transactional(readOnly = true)
     public ClientDTO findById(@PathVariable Long id) {
-        return new ClientDTO(clientRepository.findById(id).get());
+        Client client = clientRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado!"));
+        return new ClientDTO(client);
     }
 
     @Transactional(readOnly = true)
@@ -36,7 +38,7 @@ public class ClientService {
     }
 
     @Transactional
-    public ClientDTO update(Long id, ClientDTO dto){
+    public ClientDTO update(Long id, ClientDTO dto) {
         Client client = clientRepository.getReferenceById(id);
         copyDtoToClient(dto, client);
         client = clientRepository.save(client);
@@ -44,8 +46,8 @@ public class ClientService {
     }
 
     @Transactional
-    public void delete(Long id){
-        if (!clientRepository.existsById(id)){
+    public void delete(Long id) {
+        if (!clientRepository.existsById(id)) {
             return;
         }
         clientRepository.deleteById(id);
