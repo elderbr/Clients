@@ -6,5 +6,5 @@ INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Isabela
 INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Ricardo Pereira', '1983-11-18', '56789012306', 4, 5500.0);
 INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Camila Fernandes', '1990-05-07', '32109876507', 1, 3000.0);
 INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Felipe Almeida', '1987-08-12', '89012345608', 3, 4500.0);
-INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Juliana Rocha', '1998-01-25', '89012345608', 0, 4500.0);
+INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Juliana Rocha', '1998-01-25', '45612378909', 0, 4500.0);
 INSERT INTO tb_client (name, birth_date, cpf, children, income) VALUES ('Lucas Martins', '1986-06-03', '67890123410', 2, 4700.0);
