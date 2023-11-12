@@ -1,11 +1,9 @@
 package com.elderbr.clients.dto;
 
 import com.elderbr.clients.entities.Client;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -20,13 +18,14 @@ public class ClientDTO {
     @CPF(message = "Verifique se digitou o CPF corretamente!")
     private String cpf;
 
-    @Positive(message = "O valor não pode ser negativo")
+    @Positive(message = "O valor não pode ser zero ou negativo")
     private double income;
-
-    @Past(message = "A data do aniversário não pode ser atual ou futura")
+    @NotNull(message = "Não pode ser nulo")
+    @Past(message = "A data de nascimento deve estar no passado")
+    @DateTimeFormat(pattern = "yyyy-MM-dd", iso = DateTimeFormat.ISO.DATE)
     private LocalDate birthDate;
 
-    @Positive(message = "O valor não pode ser negativo")
+    @PositiveOrZero(message = "O valor não pode ser negativo")
     private int children;
 
     private ClientDTO() {

@@ -27,7 +27,7 @@ public class ClientService {
 
     @Transactional(readOnly = true)
     public Page<ClientDTO> findAll(Pageable pageable) {
-        Page<Client> pages = clientRepository.findAllByOrderByNameAsc(pageable);
+        Page<Client> pages = clientRepository.findAll(pageable);
         return pages.map(x -> new ClientDTO(x));
     }
 
