@@ -1,4 +1,4 @@
-package com.elderbr.Clients.entities;
+package com.elderbr.clients.entities;
 
 import jakarta.persistence.*;
 

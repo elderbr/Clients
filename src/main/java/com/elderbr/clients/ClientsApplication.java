@@ -1,4 +1,4 @@
-package com.elderbr.Clients;
+package com.elderbr.clients;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
