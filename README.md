@@ -1,6 +1,8 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="300" height="100">  <!-- Retângulo preto como fundo -->  <rect width="100%" height="100%" fill="black" />  <!-- Conteúdo original da imagem -->  <image href="https://devsuperior.com.br/_next/static/images/logo-062c6633a2eb15831642636f96aa2c6c.svg" width="80%" height="80%" x="10%" y="10%" />  </svg>
 
+[![DevSuperior](https://devsuperior.com.br/_next/static/images/logo-062c6633a2eb15831642636f96aa2c6c.svg)
+](https://devsuperior.com.br/)
 
 ## DESAFIO: CRUD de clientes
 
