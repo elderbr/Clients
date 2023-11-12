@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -45,15 +46,15 @@ public class ClientService {
             copyDtoToClient(dto, client);
             client = clientRepository.save(client);
             return new ClientDTO(client);
-        }catch (EntityNotFoundException e){
+        } catch (EntityNotFoundException e) {
             throw new ResourceNotFoundException("Recurso não encontrado!");
         }
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id) {
         if (!clientRepository.existsById(id)) {
-            return;
+            throw new ResourceNotFoundException("Recurso não encontrado");
         }
         clientRepository.deleteById(id);
     }
