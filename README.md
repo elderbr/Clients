@@ -2,6 +2,12 @@
 
 ### Capítulo: API REST, camadas, CRUD, exceções, validações
 
+<div style="background-color:black; text-align:center">
+    <a href="https://devsuperior.com.br/" target="_blanck">
+	    <img src="https://devsuperior.com.br/_next/static/images/logo-062c6633a2eb15831642636f96aa2c6c.svg" alt="DevSuperior" />
+	</a>
+</div>
+
 Projeto Spring Boot contendo um CRUD completo de web services REST para acessar um recurso de clientes, contendo as
 cinco operações básicas aprendidas no capítulo:
 
