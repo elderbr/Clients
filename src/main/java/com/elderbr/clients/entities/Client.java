@@ -11,8 +11,8 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String name;
+    @Column(unique = true)
     private String cpf;
     private double income;
     private LocalDate birthDate;
