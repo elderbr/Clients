@@ -5,6 +5,8 @@ import com.elderbr.clients.entities.Client;
 import com.elderbr.clients.services.ClientService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -24,8 +26,13 @@ public class ClientController {
         return ResponseEntity.ok(clientService.findById(id));
     }
 
+    @GetMapping
+    public ResponseEntity<Page<ClientDTO>> findAll(Pageable pageable) {
+        return ResponseEntity.ok(clientService.findAll(pageable));
+    }
+
     @PostMapping
-    public ResponseEntity<ClientDTO> insert(@Valid @RequestBody ClientDTO clientDTO){
+    public ResponseEntity<ClientDTO> insert(@Valid @RequestBody ClientDTO clientDTO) {
         clientDTO = clientService.insert(clientDTO);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
