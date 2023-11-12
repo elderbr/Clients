@@ -26,7 +26,7 @@ public class ClientDTO {
     @NotBlank(message = "Campo requerido")
     @Past(message = "A data do aniversário não pode ser atual ou futura")
     private LocalDate birdDate;
-    
+
     @Positive(message = "O valor não pode ser negativo")
     private int children;
 
