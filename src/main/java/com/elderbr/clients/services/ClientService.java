@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -35,9 +36,24 @@ public class ClientService {
         return new ClientDTO(client);
     }
 
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO dto){
+        Client client = clientRepository.getReferenceById(id);
+        copyDtoToClient(dto, client);
+        client = clientRepository.save(client);
+        return new ClientDTO(client);
+    }
+
+    @Transactional
+    public void delete(Long id){
+        if (!clientRepository.existsById(id)){
+            return;
+        }
+        clientRepository.deleteById(id);
+    }
+
 
     private void copyDtoToClient(ClientDTO dto, Client client) {
-        client.setId(dto.getId());
         client.setName(dto.getName());
         client.setBirthDate(dto.getBirthDate());
         client.setCpf(dto.getCpf());
